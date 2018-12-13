@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <title>Shoe Store</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <a class="home-link" href="/">  
+        <h3>
+          <i class="fas fa-menorah"></i> Sababa
+        </h3>
+      </a>
+     
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button type="button" class="btn btn-outline-dark">Search</button>
+
+  </form>
+</nav>
+
+<div class="row">
+  
+
+ 
+{% for product in products %}
+<div class="card">
+  <div class="col-3">
+         <div class="card-body">
+    <h3 lass="card-title">{{ product.name }}</h3>
+     <img src="{{ url_for('static', filename='images/shoes/') }}{{ product.image}}">
+        <h3 class="card-title">${{ product.price }}</h3>
+        <a href="/products/{{ product.id }}" class="btn btn-primary">see more</a>
+
+  </div></div>
+  {% endfor %}
+
+ 
+
+
+</body>
+</html>
